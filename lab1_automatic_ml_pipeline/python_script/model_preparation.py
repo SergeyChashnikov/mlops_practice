@@ -18,8 +18,8 @@ def train_model_and_evaluate(file_path):
     X, y = df.drop(columns = ['Salary']), df['Salary'].values
 
     # Создаем модель Случайный Лес
-    model_rf = RandomForestRegressor(n_estimators=50,
-                                     max_depth=20,
+    model_rf = RandomForestRegressor(n_estimators=150,
+                                     max_depth=10,
                                      oob_score=True)
 
     # Обучаем модель
