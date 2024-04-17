@@ -1,0 +1,6 @@
+The virtual environment '.venv' has been created.
+Virtual environment '.venv' not found. Use 'D:\ML\Git\SergeyChashnikov\mlops_practice\lab1_automatic_ml_pipeline\pipeline.sh create [env_name]' to create.
+All dependencies are already installed.
+
+Model r2-score:   0.796882707227601
+
