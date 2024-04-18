@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup Environment') {
+            steps {
+                sh 'echo "Seting up environment..."'
+                sh 'pip install numpy==1.21.2'
+                sh 'pip install pandas==1.3.3'
+                sh 'pip install scikit-learn==1.4.1'
+            }
+        }
+        stage('Download Data') {
+            steps {
+                sh 'python3 script/download_data.py'
+            }
+        }
+        stage('Preprocess Data') {
+            steps {
+                sh 'python3 script/preprocess.py'
+            }
+        }
+        stage('Train Model') {
+            steps {
+                sh 'python3 script/train_model.py'
+            }
+        }
+        stage('Test Model') {
+            steps {
+                sh 'python3 script/test_model.py'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'echo "Pipeline comleted"'
+        }
+    }
+}
