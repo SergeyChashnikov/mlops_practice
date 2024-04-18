@@ -12,22 +12,22 @@ pipeline {
         }
         stage('Download Data') {
             steps {
-                sh 'python3 script/download_data.py'
+                sh 'python3 lab2_Jenkins_automatic/script/download_data.py'
             }
         }
         stage('Preprocess Data') {
             steps {
-                sh 'python3 script/preprocess.py'
+                sh 'python3 lab2_Jenkins_automatic/script/preprocess.py'
             }
         }
         stage('Train Model') {
             steps {
-                sh 'python3 script/train_model.py'
+                sh 'python3 lab2_Jenkins_automatic/script/train_model.py'
             }
         }
         stage('Test Model') {
             steps {
-                sh 'python3 script/test_model.py'
+                sh 'python3 lab2_Jenkins_automatic/script/test_model.py'
             }
         }
     }
