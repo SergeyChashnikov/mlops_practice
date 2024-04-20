@@ -1,7 +1,7 @@
-# mlops_practice
-study project
+# Practices for MLops
 
-# Practices for MLops course UrFU + SkillFactory
+Study project
+
 ## Module 1
 <details>
 
