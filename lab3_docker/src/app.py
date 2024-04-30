@@ -5,7 +5,7 @@ import joblib
 
 # Функция для загрузки модели
 def load_model():
-    model = joblib.load('app/data/model.pkl')
+    model = joblib.load('data/model.pkl')
     return model
 
 model = load_model()

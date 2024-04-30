@@ -75,4 +75,4 @@ model_rf.fit(X_train, y_train.values.ravel())
 #print()
 
 # Сохранение модели
-joblib.dump(model_rf, f'app/data/model.pkl')
+joblib.dump(model_rf, f'data/model.pkl')
