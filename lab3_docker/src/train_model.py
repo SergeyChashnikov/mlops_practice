@@ -56,7 +56,7 @@ os.makedirs('test', exist_ok=True)
 
 # Создаем тестовый json файл
 test = data.iloc[0]
-test.to_json(f'test/test.json', index=False)
+test.to_json(f'test/test.json', orient='table', index=False)
 
 # Убираем тест из данных
 data1 = data.drop(index=0)
