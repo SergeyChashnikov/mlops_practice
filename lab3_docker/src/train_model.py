@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler # Библиотека для �
 from sklearn.preprocessing import OrdinalEncoder # Библиотека для порядковое кодирование от scikit-learn
 from sklearn.ensemble import RandomForestClassifier # Случайный лес для классификации
 import joblib # Для сохранения модели
-
+import json
 
 # Функция стандартизации
 def standard_data(data):
@@ -51,10 +51,19 @@ data[num_columns] = df_num_columns
 df_cat_columns = ordinal_data(data[cat_columns])
 data[cat_columns] = df_cat_columns
 
-#print(data)
-#print()
-X = data.drop('Education Level', axis=1)
-y = data['Education Level']
+# Создание отдельной папку для теста
+os.makedirs('test', exist_ok=True)
+
+# Создаем тестовый json файл
+test = data.iloc[0]
+test.to_json(f'test/test.json', index=False)
+
+# Убираем тест из данных
+data1 = data.drop(index=0)
+
+
+X = data1.drop('Education Level', axis=1)
+y = data1['Education Level']
 
 # Разбиение на тестировочные и тестовые данные
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -75,4 +84,6 @@ model_rf.fit(X_train, y_train.values.ravel())
 #print()
 
 # Сохранение модели
-joblib.dump(model_rf, f'data/model.pkl')
+joblib.dump(model_rf, f'data/model_rf.pkl')
+
+

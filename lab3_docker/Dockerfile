@@ -13,3 +13,4 @@ RUN python /app/src/train_model.py
 
 # Запуск Streamlit
 CMD ["streamlit", "run", "src/app.py" ]
+

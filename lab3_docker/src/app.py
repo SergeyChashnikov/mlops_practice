@@ -5,7 +5,7 @@ import joblib
 
 # Функция для загрузки модели
 def load_model():
-    model = joblib.load('data/model.pkl')
+    model = joblib.load('data/model_rf.pkl')
     return model
 
 model = load_model()
@@ -27,3 +27,4 @@ if upload_file is not None:
         st.error(f"Error of prediction: {e}")
     finally:
         upload_file.seek(0) # Возвращаемся к началу файла
+
